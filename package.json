@@ -1,8 +1,8 @@
 {
-  "name": "jsmod9",
+  "name": "jsmod10les19",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
+  "source": "src/templates/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skifozzze/JSmod9.git"
+    "url": "git+https://github.com/skifozzze/jsmod10les19.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/skifozzze/JSmod9/issues"
+    "url": "https://github.com/skifozzze/jsmod10les19/issues"
   },
-  "homepage": "https://github.com/skifozzze/JSmod9#readme",
+  "homepage": "https://github.com/skifozzze/jsmod10les19#readme",
   "dependencies": {
     "joi": "^17.7.0",
     "shortid": "^2.2.16"
