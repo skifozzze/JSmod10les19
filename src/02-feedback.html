@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-feedback</title>
+  </head>
+  <body>
+    <style>
+      button {
+        margin: 15px auto;
+        padding: 10px;
+        width: 200px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin: 10px auto;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+      }
+    </style>
+    <p><a href="index.html">на головну</a></p>
+
+    <form class="feedback-form js-feedback-form">
+      <label>
+        <b>NAME</b>
+        <input
+          type="text"
+          name="name"
+          placeholder="ENTER YOUR NAME"
+          value="INCOGNITO"
+        />
+      </label>
+      <label>
+        <b>MESSAGE</b>
+        <textarea name="message" rows="6"></textarea>
+      </label>
+      <button type="submit">LEAVE FEEDBACK</button>
+    </form>
+
+    <script src="./js/02-feedback.js" type="module"></script>
+  </body>
+</html>

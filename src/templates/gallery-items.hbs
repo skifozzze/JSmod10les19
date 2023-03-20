@@ -1,0 +1,18 @@
+{{#each this}}
+<li class="gallery__item">
+  <div class="gallery__thumb">
+    <img src="{{image}}" alt="{{code}} flag" width="320" />
+  </div>
+  <p><b>{{code}}</b></p>
+  <p><b>{{unicode}}</b></p>
+  <p><b>{{emoji}}</b></p>
+
+  {{#if infected}}
+  <p>omgggg</p>
+  {{/if}}
+
+  {{#unless infected}}
+  <p style="color: green;">okaaaaay</p>
+  {{/unless}}
+</li>
+{{/each}}

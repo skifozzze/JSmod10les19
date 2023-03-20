@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"jC2qd":[function(require,module,exports) {
+})({"4MAhz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "890e741a975ef6c8";
+module.bundle.HMR_BUNDLE_ID = "1634398eaf20c723";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,8 +556,201 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"8lqZg":[function(require,module,exports) {
+},{}],"6OtqS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _countriesJson = require("./countries.json");
+var _countriesJsonDefault = parcelHelpers.interopDefault(_countriesJson);
+var _galleryItemsHbs = require("../templates/gallery-items.hbs");
+var _galleryItemsHbsDefault = parcelHelpers.interopDefault(_galleryItemsHbs);
+const galleryRef = document.querySelector(".js-gallery");
+const markup = (0, _galleryItemsHbsDefault.default)((0, _countriesJsonDefault.default));
+galleryRef.insertAdjacentHTML("beforeend", markup);
 
-},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequirebe8f")
+},{"./countries.json":"joH5X","../templates/gallery-items.hbs":"6iRQS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"joH5X":[function(require,module,exports) {
+module.exports = JSON.parse('[{"name":"England","code":"ENGLAND","emoji":"\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F","unicode":"U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F","image":"https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ENGLAND.svg","infected":true},{"name":"Scotland","code":"SCOTLAND","emoji":"\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74\uDB40\uDC7F","unicode":"U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F","image":"https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SCOTLAND.svg","infected":true},{"name":"Wales","code":"WALES","emoji":"\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73\uDB40\uDC7F","unicode":"U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F","image":"https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/WALES.svg","infected":false}]');
 
-//# sourceMappingURL=index.975ef6c8.js.map
+},{}],"6iRQS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "1": function(container, depth0, helpers, partials, data) {
+        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<li class="gallery__item">\r\n  <div class="gallery__thumb">\r\n    <img src="' + alias4((helper = (helper = lookupProperty(helpers, "image") || (depth0 != null ? lookupProperty(depth0, "image") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "image",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 4,
+                    "column": 14
+                },
+                "end": {
+                    "line": 4,
+                    "column": 23
+                }
+            }
+        }) : helper)) + '" alt="' + alias4((helper = (helper = lookupProperty(helpers, "code") || (depth0 != null ? lookupProperty(depth0, "code") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "code",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 4,
+                    "column": 30
+                },
+                "end": {
+                    "line": 4,
+                    "column": 38
+                }
+            }
+        }) : helper)) + ' flag" width="320" />\r\n  </div>\r\n  <p><b>' + alias4((helper = (helper = lookupProperty(helpers, "code") || (depth0 != null ? lookupProperty(depth0, "code") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "code",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 6,
+                    "column": 8
+                },
+                "end": {
+                    "line": 6,
+                    "column": 16
+                }
+            }
+        }) : helper)) + "</b></p>\r\n  <p><b>" + alias4((helper = (helper = lookupProperty(helpers, "unicode") || (depth0 != null ? lookupProperty(depth0, "unicode") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "unicode",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 7,
+                    "column": 8
+                },
+                "end": {
+                    "line": 7,
+                    "column": 19
+                }
+            }
+        }) : helper)) + "</b></p>\r\n  <p><b>" + alias4((helper = (helper = lookupProperty(helpers, "emoji") || (depth0 != null ? lookupProperty(depth0, "emoji") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "emoji",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 8,
+                    "column": 8
+                },
+                "end": {
+                    "line": 8,
+                    "column": 17
+                }
+            }
+        }) : helper)) + "</b></p>\r\n\r\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "infected") : depth0, {
+            "name": "if",
+            "hash": {},
+            "fn": container.program(2, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 10,
+                    "column": 2
+                },
+                "end": {
+                    "line": 12,
+                    "column": 9
+                }
+            }
+        })) != null ? stack1 : "") + "\r\n" + ((stack1 = lookupProperty(helpers, "unless").call(alias1, depth0 != null ? lookupProperty(depth0, "infected") : depth0, {
+            "name": "unless",
+            "hash": {},
+            "fn": container.program(4, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 14,
+                    "column": 2
+                },
+                "end": {
+                    "line": 16,
+                    "column": 13
+                }
+            }
+        })) != null ? stack1 : "") + "</li>\r\n";
+    },
+    "2": function(container, depth0, helpers, partials, data) {
+        return "  <p>omgggg</p>\r\n";
+    },
+    "4": function(container, depth0, helpers, partials, data) {
+        return '  <p style="color: green;">okaaaaay</p>\r\n';
+    },
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
+            "name": "each",
+            "hash": {},
+            "fn": container.program(1, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 18,
+                    "column": 9
+                }
+            }
+        })) != null ? stack1 : "";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["4MAhz","6OtqS"], "6OtqS", "parcelRequirebe8f")
+
+//# sourceMappingURL=04-gallery.af20c723.js.map

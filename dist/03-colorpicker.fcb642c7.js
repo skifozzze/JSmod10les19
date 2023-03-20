@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"jC2qd":[function(require,module,exports) {
+})({"iJdq1":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "890e741a975ef6c8";
+module.bundle.HMR_BUNDLE_ID = "0634bb9bfcb642c7";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,8 +556,298 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"8lqZg":[function(require,module,exports) {
+},{}],"ePOyc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _colorCardHbs = require("../templates/color-card.hbs");
+var _colorCardHbsDefault = parcelHelpers.interopDefault(_colorCardHbs);
+var _colorCardsHbs = require("../templates/color-cards.hbs");
+var _colorCardsHbsDefault = parcelHelpers.interopDefault(_colorCardsHbs);
+const colors = [
+    {
+        hex: "#7f11e0",
+        rgb: "rgb(127, 17, 224)"
+    },
+    {
+        hex: "#fff",
+        rgb: "rgb(255,255,255)"
+    },
+    {
+        hex: "#cdcdcd",
+        rgb: "rgb(205,205,205)"
+    },
+    {
+        hex: "#cdff",
+        rgb: "rgb(204, 221 , 255)"
+    },
+    {
+        hex: "#bbdfff",
+        rgb: "rgb(187, 223, 255)"
+    }
+];
+const paletteContainerEl = document.querySelector(".js-palette");
+const cardsMarkup = createColorMarkup(colors);
+paletteContainerEl.insertAdjacentHTML("beforeend", cardsMarkup);
+paletteContainerEl.addEventListener("click", onPaletteContainerClick);
+function createColorMarkup(colors) {
+    // return colors.map(color => colorCardTpl(color)).join('');
+    // return colors.map(colorCardTpl).join('');
+    return (0, _colorCardsHbsDefault.default)(colors);
+}
+function onPaletteContainerClick(evt) {
+    const isColorSwatchEl = evt.target.classList.contains("color-swatch");
+    if (!isColorSwatchEl) return;
+    const swatchEl = evt.target;
+    const parentColorCard = swatchEl.closest(".color-card");
+    removeActiveCardClass();
+    addActiveCardClass(parentColorCard);
+    setBodyBgColor(swatchEl.dataset.hex);
+}
+function setBodyBgColor(color) {
+    document.body.style.backgroundColor = color;
+}
+function removeActiveCardClass() {
+    const currentActiveCard = document.querySelector(".color-card.is-active");
+    if (currentActiveCard) currentActiveCard.classList.remove("is-active");
+}
+function addActiveCardClass(card) {
+    card.classList.add("is-active");
+}
 
-},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequirebe8f")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../templates/color-card.hbs":"dzjWc","../templates/color-cards.hbs":"gGpfl"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-//# sourceMappingURL=index.975ef6c8.js.map
+},{}],"dzjWc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<div class="color-card">\r\n  <div class="color-swatch" data-hex="' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 2,
+                    "column": 38
+                },
+                "end": {
+                    "line": 2,
+                    "column": 45
+                }
+            }
+        }) : helper)) + '" data-rgb="' + alias4((helper = (helper = lookupProperty(helpers, "rgb") || (depth0 != null ? lookupProperty(depth0, "rgb") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "rgb",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 2,
+                    "column": 57
+                },
+                "end": {
+                    "line": 2,
+                    "column": 64
+                }
+            }
+        }) : helper)) + '" style="background-color: ' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 2,
+                    "column": 91
+                },
+                "end": {
+                    "line": 2,
+                    "column": 98
+                }
+            }
+        }) : helper)) + '"></div>\r\n  <div class="color-meta">\r\n    <p>HEX: ' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 4,
+                    "column": 12
+                },
+                "end": {
+                    "line": 4,
+                    "column": 19
+                }
+            }
+        }) : helper)) + "</p>\r\n    <p>RGB: " + alias4((helper = (helper = lookupProperty(helpers, "rgb") || (depth0 != null ? lookupProperty(depth0, "rgb") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "rgb",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 5,
+                    "column": 12
+                },
+                "end": {
+                    "line": 5,
+                    "column": 19
+                }
+            }
+        }) : helper)) + "</p>\r\n  </div>\r\n</div>";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gGpfl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "1": function(container, depth0, helpers, partials, data) {
+        var helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<div class="color-card">\r\n  <div class="color-swatch" data-hex="' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 38
+                },
+                "end": {
+                    "line": 3,
+                    "column": 45
+                }
+            }
+        }) : helper)) + '" data-rgb="' + alias4((helper = (helper = lookupProperty(helpers, "rgb") || (depth0 != null ? lookupProperty(depth0, "rgb") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "rgb",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 57
+                },
+                "end": {
+                    "line": 3,
+                    "column": 64
+                }
+            }
+        }) : helper)) + '" style="background-color: ' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 91
+                },
+                "end": {
+                    "line": 3,
+                    "column": 98
+                }
+            }
+        }) : helper)) + '"></div>\r\n  <div class="color-meta">\r\n    <p>HEX: ' + alias4((helper = (helper = lookupProperty(helpers, "hex") || (depth0 != null ? lookupProperty(depth0, "hex") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "hex",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 5,
+                    "column": 12
+                },
+                "end": {
+                    "line": 5,
+                    "column": 19
+                }
+            }
+        }) : helper)) + "</p>\r\n    <p>RGB: " + alias4((helper = (helper = lookupProperty(helpers, "rgb") || (depth0 != null ? lookupProperty(depth0, "rgb") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "rgb",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 6,
+                    "column": 12
+                },
+                "end": {
+                    "line": 6,
+                    "column": 19
+                }
+            }
+        }) : helper)) + "</p>\r\n  </div>\r\n</div>\r\n";
+    },
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
+            "name": "each",
+            "hash": {},
+            "fn": container.program(1, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 9,
+                    "column": 11
+                }
+            }
+        })) != null ? stack1 : "";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["iJdq1","ePOyc"], "ePOyc", "parcelRequirebe8f")
+
+//# sourceMappingURL=03-colorpicker.fcb642c7.js.map

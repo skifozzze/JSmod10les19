@@ -1,12 +1,12 @@
-{
+ {
   "name": "jsmod10les19",
   "version": "1.0.0",
   "description": "",
-  "source": "src/templates/index.html",
+  "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /JSmod10les19/"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,15 @@
   },
   "homepage": "https://github.com/skifozzze/jsmod10les19#readme",
   "dependencies": {
+    "handlebars": "^4.7.7",
     "joi": "^17.7.0",
+    "lodash.throttle": "^4.1.1",
+    "parcel-bundler": "^1.12.5",
+    "parcel-transformer-hbs": "^1.0.3",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
-    "parcel": "latest"
+    "parcel": "^2.8.3",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
   }
 }
